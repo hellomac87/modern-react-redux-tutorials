@@ -29,3 +29,17 @@
 - react-dom 은 생성된 컴포넌트를 DOM 과 연결
 
 - DOM 에 렌더링 하기 전에 컴포넌트를 인스턴스화(JSX 로 만든다) 해야한다. 
+
+### export module, class, state
+
+### class 기반의 컴포넌트
+
+- 클래스 컴포넌트는 내부적인 정보를 저장하려 할때 사용한다.
+- ES6 기반의 클래스 : 자바스크립트 객체 형태이다.
+- 이 클래시를 react 라이브러리의 Component 를 상속받도록 한다.
+
+### 이벤트 핸들링
+[React DOC - Handling Event](https://reactjs.org/docs/handling-events.html)
+- 리액트에서 이벤트를 핸들링 할때는 두가지 과정을 거친다.
+- 첫번째, 이벤트 핸들러 선언 (이벤트 핸들러 = 이벤트가 발생 할 때 마다 실행되는 함수)
+- 두번째, 이벤트 핸들러를 살펴보려는 요소에 전달한다.
