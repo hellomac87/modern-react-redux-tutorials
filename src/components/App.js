@@ -25,10 +25,6 @@ class App extends Component {
       });
     });
   }
-
-  handleSelectedVideo(){
-    console.log(this);
-  }
   
   render() {
     return (
@@ -36,7 +32,7 @@ class App extends Component {
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList 
-        onVideoSelect={(selectedVideo) => this.setState({selectedVideo})}
+          onVideoSelect={(AtListSelectedVideo) => this.setState({ selectedVideo: AtListSelectedVideo})}
         videos={this.state.videos}/>
         
       </div>
