@@ -3,6 +3,7 @@ import SearchBar from './search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoList from "./video_list";
 import VideoDetail from './video_detail';
+import './style.css';
 
 const API_KEY = "AIzaSyD_ymZFHjd1-k11mirmA4dbR4G5HjDlvIU"; 
 
@@ -28,13 +29,14 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div className="container">
         <SearchBar />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList 
-          onVideoSelect={(AtListSelectedVideo) => this.setState({ selectedVideo: AtListSelectedVideo})}
-        videos={this.state.videos}/>
-        
+        <div className="d-flex">
+          <VideoDetail video={this.state.selectedVideo} />
+          <VideoList
+            onVideoSelect={(AtListSelectedVideo) => this.setState({ selectedVideo: AtListSelectedVideo })}
+            videos={this.state.videos} />
+        </div>
       </div>
     );
   }
