@@ -19,7 +19,11 @@ class App extends Component {
       selectedVideo: null // 나이 생각과 일치
     }
 
-    YTSearch({ key: API_KEY, term: 'Sam Smith' }, (videos) => {
+    this.videoSearch('Sam Smith');
+  }
+
+  videoSearch(term){
+    YTSearch({ key: API_KEY, term: term }, (videos) => {
       this.setState({
         videos: videos, // === videos: videos // 좀더 직관적 표현으로 바꿈
         selectedVideo: videos[0]
@@ -30,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar onSearchTermChange={(term) => this.videoSearch(term)}/>
         <div className="d-flex">
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList
